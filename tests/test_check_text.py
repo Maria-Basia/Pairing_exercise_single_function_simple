@@ -1,4 +1,6 @@
 from lib.check_text import *
+import pytest
+
 """
 Given a text that contains one #TODO it returns True
 """
@@ -26,3 +28,13 @@ Given a text that contains #TODO followed by punctuation returns True
 def test__TODO_with_punctuation_returns_True():
     result =check_text("Hello world #TODO.") 
     assert result == True
+
+
+"""
+Given a non-string input it shows an error message 
+"""
+def test__wrong_input_format():
+    with pytest.raises(Exception) as error:
+        check_text(5)
+    error_message = str(error.value)
+    assert  error_message =="Please provide text"
