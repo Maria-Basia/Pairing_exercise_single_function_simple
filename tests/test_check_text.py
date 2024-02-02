@@ -10,7 +10,7 @@ def test_one_TODO_returns_True():
 Given a text that doesn't contain the word #TODO it returns False
 """
 def test_no_TODO_returns_False():
-    result = check_text("hello WORLD") 
+    result = check_text("hello WORD") 
     assert result == False
 
 """
